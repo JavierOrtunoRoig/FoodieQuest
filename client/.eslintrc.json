@@ -1,3 +1,11 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals", "semistandard"],
+  "settings": {
+    "next": {
+      "rootDir": "client/app"
+    }
+  },
+  "rules": {
+    "no-undef": "off"
+  }
 }

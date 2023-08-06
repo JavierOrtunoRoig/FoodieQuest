@@ -1,4 +1,5 @@
 export const ROUTES = {
-    HOME: '/',
-    FORMAT_PLACES: '/format-places',
-}
+  HOME: '/',
+  PLACES: '/places',
+  FORMAT_PLACES: '/format-places'
+};

@@ -5,7 +5,6 @@ import playwright from 'playwright';
 
 const app = new express();
 const port = process.env.PORT || 4000;
-const upload = multer()
 
 app.use(cors());
 app.use(express.json());
@@ -21,9 +20,11 @@ const DOMElements = {
   shareURL: 'input[readonly]',
 }
 
-app.post("/", upload.none(), async ({body}, res) => {
+app.post("/api/places", async ({body}, res) => {
+  console.log(body);
   const { city, places } = body;
   const formatedPlaces = places.split("\n").map((place) => place.trim());
+  console.log(formatedPlaces);
 
   const placesData = [];
   for (const place of formatedPlaces) {
@@ -68,11 +69,13 @@ const getPlace = async ({name, city}) => {
       url: await page.getAttribute(DOMElements.shareURL, "value"),
       placeFound: true
     }
+
+    console.log(data.name + " encontrado");
   
     return data
 
   } catch (error) {
-    console.log("Había más de un error");
+    console.log("Había más de un sitio");
   } finally {
     browser.close();
   }

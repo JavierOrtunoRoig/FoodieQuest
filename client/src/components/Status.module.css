@@ -1,0 +1,15 @@
+.status {
+  width: 20px;
+  height: 150px;
+  border-radius: 0 10px 10px 0px;
+  background-color: red;
+}
+
+.status:hover {
+  cursor: pointer;
+}
+
+
+.checked {
+  background-color: green;
+}

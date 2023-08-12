@@ -3,6 +3,7 @@
 import { useState, ChangeEvent } from 'react';
 import { Textarea, Input, Button, Spinner, useDisclosure } from '@chakra-ui/react';
 import CustomAlertDialog from '@/components/CustomAlertDialog';
+import { fetchPlaces } from './utils';
 
 export default function FormatPlaces () {
   const [places, setPlaces] = useState('');
@@ -11,7 +12,7 @@ export default function FormatPlaces () {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const handleChangecity = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleChangeCity = (event: ChangeEvent<HTMLInputElement>) => {
     setCity(event.target.value);
   };
 
@@ -22,7 +23,7 @@ export default function FormatPlaces () {
   const handleSubmit = () => {
     if (!localStorage.getItem('places')) {
       setIsLoading(true);
-      fetchPlaces();
+      fetchPlaces(city, places, setIsLoading);
     } else {
       onOpen();
     }
@@ -30,22 +31,8 @@ export default function FormatPlaces () {
 
   const handleDelete = () => {
     onClose();
-    fetchPlaces();
+    fetchPlaces(city, places, setIsLoading);
   };
-
-  const fetchPlaces = () => {
-    fetch('http://localhost:4000/api/places', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ city: 'Málaga', places })
-    })
-      .then(res => res.json())
-      .then(res => {
-        setIsLoading(false);
-        localStorage.setItem('places', JSON.stringify(res));
-      });
-  };
-
   return (
     <>
       {
@@ -56,7 +43,7 @@ export default function FormatPlaces () {
                 <Input
                   id="format-city"
                   value={city}
-                  onChange={handleChangecity}
+                  onChange={handleChangeCity}
                   width={300}
                   style={{ display: 'block' }}
                 />

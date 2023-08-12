@@ -1,6 +1,5 @@
 import express from "express";
 import cors from "cors";
-import multer from 'multer'
 import playwright from 'playwright';
 
 const app = new express();
@@ -21,7 +20,6 @@ const DOMElements = {
 }
 
 app.post("/api/places", async ({body}, res) => {
-  console.log(body);
   const { city, places } = body;
   const formatedPlaces = places.split("\n").map((place) => place.trim());
   console.log(formatedPlaces);
@@ -32,7 +30,13 @@ app.post("/api/places", async ({body}, res) => {
     placesData.push(placeData);
   }
 
-  res.json(placesData);
+  res.json(placesData.filter((place) => place.placeFound).map((place) => ({
+    name: place.name,
+    address: place.address,
+    thumbnail: place.thumbnail,
+    url: place.url,
+    visited: place.visited
+  })));
 });
 
 const getPlace = async ({name, city}) => {
@@ -67,7 +71,8 @@ const getPlace = async ({name, city}) => {
       address: await page.textContent(DOMElements.placeAddress),
       thumbnail: await page.getAttribute(DOMElements.thumbnail, "src"),
       url: await page.getAttribute(DOMElements.shareURL, "value"),
-      placeFound: true
+      placeFound: true,
+      visited: false
     }
 
     console.log(data.name + " encontrado");

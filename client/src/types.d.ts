@@ -3,5 +3,5 @@ export interface Place {
   address?: string
   thumbnail?: string
   url?: string
-  placeFound: boolean
+  visited: boolean
 }

@@ -1,34 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# FoodieQuest - Restaurant Discovery and Recommendation App
+FoodieQuest is a web application designed to help users discover, organize, and share their favorite dining spots and restaurant recommendations. Whether you're an enthusiastic food lover or simply seeking new culinary adventures, FoodieQuest is here to assist you in finding delectable dining experiences.
 
-## Getting Started
+## Features
 
-First, run the development server:
+- [ ] User Registration and Profiles: Create a personal account, complete with a unique username, to unlock the full potential of FoodieQuest. Customize your profile with a profile picture and personal preferences.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- [ ] Restaurant Lists: Organize your dining destinations by creating themed lists, such as "Top Favorites," "Italian Cuisine," or "Special Occasions."
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [ ] Search for Restaurants: Seamlessly find restaurants by name, location, or cuisine type, ensuring you always locate the perfect dining spot.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [ ] Add New Restaurants: Contribute to the FoodieQuest community by adding new restaurants, including vital details like name, address, cuisine type, and captivating photos.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- [ ] Interactive Map: Visualize the locations of restaurants on an interactive map, aiding in planning your culinary journeys.
 
-## Learn More
+- [ ] Rating and Reviews: Express your opinions by rating restaurants with a star-based system and sharing detailed reviews about your experiences.
 
-To learn more about Next.js, take a look at the following resources:
+- [ ] Share with Friends: Share your favorite restaurants or entire lists with friends using easy-to-share links or email invitations.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [ ] Privacy Control: Customize the visibility of your lists, deciding whether they are public, private, or exclusively shared with friends.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- [ ] Notifications: Stay informed with notifications about new reviews, comments, or friend requests.
 
-## Deploy on Vercel
+- [ ] Social Media Integration: Seamlessly share your dining experiences and recommendations on popular social media platforms.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [ ] Tags and Categories: Label and categorize restaurants for efficient organization and quick retrieval.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [ ] Recommendation System: Receive personalized restaurant recommendations based on your preferences and previous activities.
+
+- [ ] Achievement System: Earn points and achievements for active participation, such as adding new restaurants or receiving numerous recommendations.
+
+- [ ] Responsive Design: Enjoy a user-friendly experience on both desktop and mobile devices.
+
+- [ ] Security: Rest assured that user information is protected through robust security measures.
+
+- [ ] Multilingual Support: Access the app in various languages to cater to a diverse user base.
+
+- [ ] Statistics and Analytics: Gain insights into restaurant ratings, usage patterns, and more.
+
+- [ ] Offline Functionality: Access your lists and reviews even without an internet connection.
